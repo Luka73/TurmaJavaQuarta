@@ -6,7 +6,7 @@ public class Funcionario {
     public String email;
     public int idade;
 
-    public Funcionario(){
+    public Funcionario(){ //construtor default
 
     }
 
