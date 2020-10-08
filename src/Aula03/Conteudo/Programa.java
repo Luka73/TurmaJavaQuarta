@@ -1,6 +1,6 @@
-package Aula03;
+package Aula03.Conteudo;
 
-import Aula03.Entidades.Conta;
+import Aula03.Conteudo.Entidades.Conta;
 
 public class Programa {
     public static void main(String[] args) {

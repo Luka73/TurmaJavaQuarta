@@ -1,4 +1,4 @@
-package Aula03.Entidades;
+package Aula03.Conteudo.Entidades;
 
 public class Conta {
     private String numero;
