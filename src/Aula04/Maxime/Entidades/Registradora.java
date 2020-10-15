@@ -12,8 +12,7 @@ public class Registradora {
     }
 
     public void addProduto(Produto produto) {
-        double preco = produto.getImpostoFederal() + produto.getValor();
-        total += preco;
+        total += produto.getPreco();
     }
 
     public String getNomeDoProduto(Produto produto) {

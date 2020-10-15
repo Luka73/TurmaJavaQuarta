@@ -1,41 +1,54 @@
 package Aula04.Maxime;
 
+import Aula04.Maxime.Entidades.Boleto;
 import Aula04.Maxime.Entidades.Produto;
 import Aula04.Maxime.Entidades.Registradora;
 
 public class Programa {
     public static void main(String[] args) {
-        Produto papel1 = new Produto();
-        papel1.setCodigo("01");
-        papel1.setModelo("A4");
-        papel1.setMarca("Canon"); // 01/A4 - Canon
-        papel1.setValor(10);
-        papel1.setImpostoFederal(6.70); //16.70
+        Produto prod1 = new Produto();
+        prod1.setCodigo("01");
+        prod1.setModelo("Mouse");
+        prod1.setMarca("Microsoft"); // 01/A4 - Canon
+        prod1.setValor(10);
+        prod1.setImpostoFederal(6.70);
+        prod1.setImpostoProvincial(1.00);
 
-        Produto papel2 = new Produto();
-        papel2.setCodigo("02");
-        papel2.setModelo("A3");
-        papel2.setMarca("HP"); // 02/A3 - HP
-        papel2.setValor(15);
-        papel2.setImpostoFederal(4.50); //19.50
+        Produto prod2 = new Produto();
+        prod2.setCodigo("02");
+        prod2.setModelo("Teclado");
+        prod2.setMarca("LogTech"); // 02/A3 - HP
+        prod2.setValor(15);
+        prod2.setImpostoFederal(4.50); //19.50
+        prod2.setImpostoProvincial(1.00);
 
-        Produto papel3 = new Produto();
-        papel3.setCodigo("03");
-        papel3.setModelo("A5");
-        papel3.setMarca("OfficeJet"); // 03/A5 - OfficeJet
-        papel3.setValor(11);
-        papel3.setImpostoFederal(2.10); //13.10
+        Produto prod3 = new Produto();
+        prod3.setCodigo("03");
+        prod3.setModelo("Impressora");
+        prod3.setMarca("OfficeJet"); // 03/A5 - OfficeJet
+        prod3.setValor(85);
+        prod3.setImpostoFederal(7.10); //13.10
+        prod3.setImpostoProvincial(1.00);
 
         Registradora r1 = new Registradora();
-        r1.addProduto(papel1);
-        r1.addProduto(papel2);
-        r1.addProduto(papel3);
+        r1.addProduto(prod1);
+        r1.addProduto(prod2);
+        r1.addProduto(prod3);
 
-        System.out.println("Produto 1: " + r1.getNomeDoProduto(papel1));
-        System.out.println("Produto 2: " + r1.getNomeDoProduto(papel2));
-        System.out.println("Produto 3: " + r1.getNomeDoProduto(papel3));
+        System.out.println("Produto 1: " + r1.getNomeDoProduto(prod1));
+        System.out.println("Produto 2: " + r1.getNomeDoProduto(prod2));
+        System.out.println("Produto 3: " + r1.getNomeDoProduto(prod3));
 
-        System.out.println("Total a pagar: " + r1.getTotal());
+        System.out.println("Total a pagar: R$" + r1.getTotal());
+
+        Boleto b1 = new Boleto();
+        b1.setComprador("Luana Fernandes");
+
+        b1.setValor(r1.getTotal()); //R$128,00 + 2 = R$130,00
+
+        System.out.println("Nome do Comprador: " + b1.getComprador());
+        System.out.println("Valor do boleto: R$" + b1.getValor());
+        System.out.println("Vencimento do boleto: " + b1.getVencimento());
 
     }
 }

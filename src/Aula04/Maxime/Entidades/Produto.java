@@ -4,6 +4,7 @@ public class Produto {
     private String codigo;
     private String modelo;
     private String marca;
+    private double impostoProvincial;
     private double impostoFederal;
     private double valor;
 
@@ -11,10 +12,11 @@ public class Produto {
 
     }
 
-    public Produto(String codigo, String modelo, String marca, double impostoFederal, double valor) {
+    public Produto(String codigo, String modelo, String marca, double impostoProvincial, double impostoFederal, double valor) {
         this.codigo = codigo;
         this.modelo = modelo;
         this.marca = marca;
+        this.impostoProvincial = impostoProvincial;
         this.impostoFederal = impostoFederal;
         this.valor = valor;
     }
@@ -43,6 +45,14 @@ public class Produto {
         this.marca = marca;
     }
 
+    public double getImpostoProvincial() {
+        return impostoProvincial;
+    }
+
+    public void setImpostoProvincial(double impostoProvincial) {
+        this.impostoProvincial = impostoProvincial;
+    }
+
     public double getImpostoFederal() {
         return impostoFederal;
     }
@@ -57,5 +67,9 @@ public class Produto {
 
     public void setValor(double valor) {
         this.valor = valor;
+    }
+
+    public double getPreco() {
+        return valor + impostoProvincial + impostoFederal;
     }
 }
